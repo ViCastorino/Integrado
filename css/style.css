@@ -15,7 +15,7 @@ html, body{
 }
 
 .container{
-    height: 330px;
+    height: 350px;
     width: 1000px;
     position: absolute;
     top: 15%;
@@ -91,57 +91,6 @@ html, body{
     color: #0000;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* header{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    height: 35px;
-    background: palevioletred;
-    align-items: center;
-    font-size: 20px;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 7px;
-    font-family: 'Volkhov', cursive;
-    padding-left: 5px;
-    padding-right: 5px;
+#resposta{
+    display: none;
 }
-footer{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    height: 35px;
-    background: palevioletred;
-    align-items: center;
-    font-size: 20px;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 7px;
-    font-family: 'Volkhov', cursive;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.container{
-    margin-top: 20px;
-    width: 60vw;
-    height: 50vh;
-
-}
-ul{
-    list-style: none;
-}
-h2{
-    font-size: 20px;
-    color: #fff;
-} */

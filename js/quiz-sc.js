@@ -1,6 +1,9 @@
 var currentQuestion = 0;
-var score = 0;
+var score1 = 0;
+var score2 = 0;
+var score3 = 0;
 var totQuestions = questions.length;
+let resposta = document.getElementById('resposta');
 
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
@@ -28,10 +31,20 @@ function loadNextQuestion () {
         alert('Por favor selecione sua resposta!');
         return;
     }
-    var answer = selectOption.value;
-    if(questions[currentQuestion].answer == answer){
-        score += 10;
+    var answer1 = selectOption.value;
+    var answer2 = selectOption.value;
+    var answer3 = selectOption.value;
+
+    if(questions[currentQuestion].answer1 == answer1){
+        score1 += 1;
     }
+    if(questions[currentQuestion].answer2 == answer2){
+        score2 += 1;
+    }
+    if(questions[currentQuestion].answer3 == answer3){
+        score3 += 1;
+    }
+
     selectOption.cheked = false;
     currentQuestion++;
     if(currentQuestion == totQuestions -1){
@@ -40,25 +53,28 @@ function loadNextQuestion () {
     if(currentQuestion == totQuestions){
         container.style.display =  'none';
         resultCont.style.display = '';
-        resultCont.textContent = 'Seu placar: ' + score;
+        // resultCont.textContent = 'Seu placar: ' + score;
         return;
     }
+    if(score1>score2>score3){
+        resultCont.textContent = 'Embora em algumas situações esteja mais ansioso(a) do que o normal, sua resposta frente a situações de ansiedade apresentam alguns indícios deste problema. Para ter um controle de ansiedade é importante reconhecer quando aumentam nossos níveis de estímulos, ter uma vida saudável e aprender a priorizar as coisas importantes da vida. Para uma avaliação profissional, encontrará a seguir uma oportunidade de confirmar se estes indícios de ansiedade são reais.';
+    }else if(score2>score1<score3){
+        resultCont.textContent = 'Até que ta sussa';
+    }else if(score2>score3<score1){
+        resultCont.textContent = 'Sem neurose';
+    }else if(score3>score2>score1){
+        resultCont.textContent = 'A coisa ta feia bro';
+        resposta.style.display = block;
+    }else if(score3>score1>score2){
+        resultCont.textContent = 'A coisa ta feia bro';
+        resposta.style.display = block;
+    }
+
+
+
+
+
     loadQuestion(currentQuestion);
 }
 
 loadQuestion(currentQuestion);
-
-
-function Results (){
-    if(questions[currentQuestion].opcao1 = opt1){
-        cont1++;
-    }
-    if(questions[currentQuestion].opcao2 = opt2){
-        cont2++;
-    }
-    if(questions[currentQuestion].opcao3 = opt3){
-        cont3++;
-    }
-    alert('Seu placar: ' + cont1 + cont2 + cont3);
-    return;
-}
